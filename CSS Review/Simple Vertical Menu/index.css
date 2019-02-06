@@ -1,0 +1,59 @@
+/* As a tutorial, I am braking things done in different sections; however, you can combine all sections into one while they have the same selectors. */
+
+body {
+    background: lightgray;
+  }
+  
+  /* Setting Font */
+  ul.navbar{
+    font-family: Helvetica, Geneva, Arial,
+            SunSans-Regular, sans-serif;
+    color: black;
+  }
+  
+  /* Removing list's bullets */
+  ul.navbar{
+    list-style-type: none;
+  }
+  
+  /* Removing list's default indentation */
+  ul.navbar {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Set list's size */
+  ul.navbar {
+    width: 9em;
+  }
+  
+  /* Remove link default underline and color */
+  ul.navbar a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* Remove link default visited color indicator */
+  ul.navbar a:visited {
+    color: black;
+  }
+  
+  /* Set background and border */
+  ul.navbar li {
+    background: white;
+    border: 1px solid black;
+  }
+  
+  /* 
+    Margin helps to separate list's items.
+    Padding helps to set the size of each item. 
+  */
+  ul.navbar li {
+    margin: 0.3em 0;
+    padding: 0.4em;
+  }
+  
+  /* Change background when mouse hover over list's item */
+  ul.navbar li:hover {
+    background: yellow;
+  }

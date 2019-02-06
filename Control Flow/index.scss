@@ -1,0 +1,60 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  
+  .box { 
+    @include border-radius(10px); 
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  /*** IF STATEMENT ***/
+  $show_box: true;
+  .numeric-value:after {
+    @if ($show_box){
+      @extend .box;
+    }
+    content: 'Value: ' + (2.2 / 2);
+  }
+  
+  $show_box: false;
+  .boolean-value:after {
+    @if ($show_box){
+      @extend .box;
+    }
+    content: 'Value: ' + (2 > 1);
+  }
+  
+  /*** FOR LOOP ***/
+  @for $i from 1 through 3 {
+    #box-#{$i} {
+      @extend .box
+    }
+  }
+  
+  /*** EACH ***/
+  $box-index: 0;
+  $background-color-list: red blue green yellow;
+  @each $background-color in $background-color-list {
+    #box-#{$box-index} {
+      background: $background-color;
+    }
+    $box-index: $box-index + 1;
+  }
+  
+  /*** WHILE ***/
+  $box-index: 3;
+  @while $box-index > -1 {
+     #box-#{$box-index} {
+      font-weight: bold;
+      font-size: 16px; 
+    }
+    $box-index: $box-index - 1;
+  }
+  

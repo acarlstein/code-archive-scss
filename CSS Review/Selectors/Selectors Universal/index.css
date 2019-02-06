@@ -1,0 +1,17 @@
+/* Universal selector (*): You target everything. In this case, we can "reset" any default style set by the browser or previous styles */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#bullets * {
+  color: green;
+}
+
+#explosions * {
+  color: red;
+}
+
+#games * {
+  color: blue;
+}

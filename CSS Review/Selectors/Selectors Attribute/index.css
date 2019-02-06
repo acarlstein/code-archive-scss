@@ -1,0 +1,23 @@
+div[title] { 
+    color: red;
+    border-bottom: 3px dotted #ccc; 
+  }
+  
+  input[type=text] { 
+    background: gray;
+    width: 100%; 
+  }
+  
+  input[type=text][disabled] { 
+    border: 2px solid red; 
+  }
+   /*
+  [attribute^=something]: Match a the value of an attribute that begins with something.
+  [attribute$=something]: Match a the value of an attribute that ends with something.
+  [attribute*=something]: Match a the value of an attribute that contains something, be it in the beginning, middle, or end.
+  */
+  a[href^=http] {
+      color: orange;
+      padding-left: 32px;
+      background: url(https://cdn0.iconfinder.com/data/icons/feather/96/591276-arrow-right-32.png) left no-repeat;
+  }

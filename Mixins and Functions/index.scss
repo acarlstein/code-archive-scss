@@ -1,0 +1,67 @@
+.box {
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  /*** MIXIN (EQUIVALENT TO FUNCTIONS) ***/
+  @mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  
+  .box { 
+    border: 1px solid black;
+    @include border-radius(10px); 
+  }
+  
+  /*
+  Previous code will produce:
+  .box {
+    border: 1px solid black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+  }
+  */
+  
+  /*** OPERATORS ***/
+  .numeric-value:after {
+    @extend .box;
+    content: 'Value: ' + (2.2 / 2);
+  }
+  
+  .boolean-value:after {
+    @extend .box;
+    content: 'Value: ' + (2 > 1);
+  }
+  
+  /*** FUNCTIONS ***/
+  /* 
+  List of functions: http://sass-lang.com/documentation/Sass/Script/Functions.html 
+  */
+  
+  $red: #E53B3A;
+  $blue: #3ea5ce;
+  $green: #99c712;
+  /* lighten is a function that makes a color lighter */
+  $yellow: lighten(#ffba00, 5%);
+  
+  
+  /* Create List */
+  $colors: $blue, $green, $yellow, $red;
+  
+  /*
+  nth is a function that returns a specific item in  a list
+  random is a function that returns a random number
+  */
+  .random-color{
+    @extend .box;
+    background: nth($colors, random(length($colors)))
+  }
+  
+  

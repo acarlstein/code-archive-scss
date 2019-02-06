@@ -1,0 +1,60 @@
+$box-border-color: darkgray;  
+$arrow-background-color: #337AB7;
+$arrow-font-color: white;
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+ul {
+  
+  list-style-type: none; // Remove bullets
+  margin: 0;             // Remove default margin;
+  padding: 0;            // Remove default padding;
+  
+  li {
+    background: white;
+    border: 1px solid $box-border-color; 
+    width: 200px;
+    margin: 3px 3px 0px 5px;
+    padding: 10px; 
+    text-align: center;
+  }
+
+  // Set Font Awesome arrows
+  .fa {
+    @include border-radius(5px);  
+    padding: 10px;
+    width: 40px;
+    cursor: pointer;
+
+    &.fa-arrow-up {
+      background: $arrow-background-color;
+      color: $arrow-font-color;
+      margin-left: -25px;
+    }
+
+    &.fa-arrow-down {
+      background: $arrow-background-color;
+      color: $arrow-font-color;
+      margin-right: 25px;
+    }
+    
+  }
+  
+  & li:first-child {
+    i.fa.fa-arrow-up {
+      visibility: hidden;
+    }
+  }
+  
+  & li:last-child {
+    i.fa.fa-arrow-down {
+      visibility: hidden;
+    }
+  }
+  
+}

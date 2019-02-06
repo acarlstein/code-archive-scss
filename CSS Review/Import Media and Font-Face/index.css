@@ -1,0 +1,115 @@
+/* @import rules must be placed at the top of a stylesheet, before any other rules. If you remove this import the title will change font */
+@import "https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css";
+
+/* @media is used to apply styles to a specific media. i.e: screen, print, projection, handheld and all. You can use comas indicate more than one media. CSS3 have more type of media at your disposition*/
+@media screen {
+    h2 {
+        font-size: 30pt;
+        font-family: times, serif;
+    }
+}
+
+@media print {
+    h2 {
+        font-size: 60pt;
+        font-family: times, serif;
+    }
+}
+
+/* @font-face embedding fonts in a web page so that a typeface can be used even if it isn’t sitting on the user’s computer. */
+@font-face {
+    font-family: "sansation";
+    src: url( src: url(https://www.w3schools.com/cssref/sansation_light.woff);
+}
+/* Note: Some fonts have copyright and user terms, as well as compatibility and/or optimization issues so be aware. 
+  Note: You can look several fonts to apply with a comma-separated list. If the font is in the user computer, you can replace url with local.
+*/
+
+
+/* Notice how the first paragraph have a different font */
+p.par1 { 
+  font-family: "sansation", arial, sans-serif; 
+}
+
+.box {
+  border: 2px solid black;
+  width: 150px;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {    
+    .max-width { 
+      width: 100%;
+      background: red;
+      color: white;
+    }
+}
+
+@media screen and (min-width: 768px) {    
+    .min-width { 
+      width: 100%;
+      background: blue;
+      color: white;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .orient-landscape { 
+      background: green;
+      color: white;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    .orient-portrait { 
+      background: orange;
+    }
+}
+
+@media screen and (min-device-height: 768px) 
+              and (max-device-width: 1024px) {
+  .min-max-device-height {
+    background: yellow; 
+  }
+}
+
+/* You can also use min-device-pixel-ratio and max-device-pixel-ratio.*/
+@media (device-pixel-ratio: 2) {
+  .device-pixel-ratio { 
+      background: linear-gradient(red, yellow);
+  }
+}
+
+@media screen and (resolution: 326dpi) { 
+  .resolution{
+    background: red;   
+  }
+}
+
+@media screen and (min-resolution: 96dpi) { 
+  .resolution{
+    background: blue;
+    color: white;
+  }
+}
+
+/* widescreen */
+@media screen and (device-aspect-ratio: 16/9) { 
+  .device-aspect-ratio{
+    background: green;
+    color: white;
+  }
+}
+
+@media screen and (device-aspect-ratio: 4/3) { 
+  .device-aspect-ratio{
+    background: orange;
+  }
+}
+
+@media screen and (device-aspect-ratio: 5/4) { 
+  .device-aspect-ratio{
+    background: yellow;
+  }
+}
+

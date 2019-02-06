@@ -1,0 +1,24 @@
+.child {
+    border: 2px solid blue;
+    .parent & {
+      border: 2px solid red;
+      .lt-ie9 & {     
+        border: 2px solid green;
+      }
+    }
+  }
+  
+  
+  /*
+  .child {
+    border: 2px solid blue;
+  }
+  .parent .child {
+    border: 2px solid red;
+  }
+  .lt-ie9 .parent .child {
+    border: 2px solid green;
+  }
+  */
+  
+  

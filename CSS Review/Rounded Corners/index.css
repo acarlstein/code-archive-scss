@@ -1,0 +1,40 @@
+/* Note: Internet Explorer versions 8 and below don’t support border-radius. */
+
+/* Note:  -webkit-border-radius and -moz-border-radius which are for older, barely-used versions of Safari and Firefox respectively */
+
+#box {
+    background: #0FF;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;    
+}
+
+#box2{
+    border: 20px solid #8b2;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+#box3{
+    border: 20px solid #00FF00;
+    background: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 6px 12px 18px 24px;
+    margin-top: 50px;
+}
+
+#ellipse {
+        background: red;
+        width: 100px;
+        height: 150px;
+        border-radius: 50px/100px;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+          position: absolute;
+        top: 0px;
+        margin-left: 200px;
+        margin-top: 5px;
+}

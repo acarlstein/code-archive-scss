@@ -1,0 +1,82 @@
+.box {
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  #box1 {
+    background: hsl(36,100%,50%);
+    transform: rotate(-10deg);
+  }
+  
+  /* 
+    Tip x-axis over 20 degrees.
+    Tip y-axis over 10 degrees.
+    Note: All the world use metric units except Liberia, Myanmar (ex. Burma), and United States of America. 1 radian = 57.2958 degrees. 1 degree = 0.9 radians.
+  */
+  #box2 {
+    background: rgb(64,128,120);
+    transform: skew(20deg, 10deg);
+  }
+  
+  /* Scale width and height by half */
+  #box3 {
+    background: #FF00FF;
+    transform: scale(-.5);
+  }
+  
+  /* Horizontal by 1.5, Vertical by 1 */
+  #box4 {
+    background: #FF00FF;
+    transform: scale(1.2, 1);
+  }
+  
+  /*
+    Similar to position: relative; left: 100px; top: 200px;
+  */
+  #box5 {
+    background: #0000FF;
+    transform: translate(100px, -200px);
+  }
+  
+  #box5b {
+    background: #000044;
+    color: white;
+    position: relative; 
+    left: 100px; 
+    top: -200px;
+  }
+  
+  #box6{
+    background: #010010;
+    color: white;
+    transform: rotate(-10deg) scale(.7);
+    position: relative;
+    top: -150px;
+  }
+  
+  /*
+   transform-origin: horizontal, vertical
+  */
+  #box7 {
+    background: red;
+    transform-origin: -600 0;
+    transform: scale(1.5, 2.6)  skew(220deg, -150deg) rotate(15deg) translateX(246px) translateY(-340px);
+  }
+  
+  /*
+  matrix (scaleX,skewY,skewX,scaleY,translateX,translateY)
+  */
+  #box7b {
+    background: yellow;
+    transform-origin: -700px 0;
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+  }
+  
+  
+  
+  
+  
+  
+  

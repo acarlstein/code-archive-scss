@@ -1,0 +1,152 @@
+.box {
+    font-family: sans-serif;
+    background: lightgray;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 3px 5px 3px;
+  }
+  
+  /* You need to indicate that it is a block to be affected by the transform */
+  .box {
+    display: inline-block;
+  }
+  
+  /*** ICON ***/
+  .icon {
+    background: green;
+    color: white;
+  }
+  
+  /* Create room for the icon */
+  .icon {
+    position: relative;
+    padding-right: 2.2em; 
+  }
+  
+  /* Add Font Awesome */
+  .icon:before {
+    font-family: FontAwesome;
+    content: "\f055";
+    position: absolute;
+    right: 0.6em;
+    padding: 2px 1px;
+  }
+  
+  /*** CHANGE ICON ***/
+  /* Create room for the icon */
+  .change-icon {
+    background: blue;
+    color: white;
+    position: relative;
+    padding-right: 2.2em; 
+  }
+  
+  /* Add Font Awesome */
+  .change-icon:before {
+    font-family: FontAwesome;
+    content: "\f055";
+    position: absolute;
+    right: 0.6em;
+    padding: 2px 1px;
+  }
+  
+  .change-icon:hover::before {
+    color: yellow;
+    content: "\f067 ";  
+  }
+  
+  /**** ICON WOBBLE VERTICALLY ***/
+  .icon-wobble-vertically {
+    background: orange;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    position: relative;
+    padding-right: 2.2em;
+  }
+  
+  .icon-wobble-vertically:before {
+    font-family: FontAwesome;
+    content: "\f01a";
+    position: absolute;
+    right: .8em;
+    padding: 2px 1px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  .icon-wobble-vertically:hover:before
+  , .icon-wobble-vertically:focus:before
+  , .icon-wobble-vertically:active:before {
+    -webkit-animation-name: icon-wobble-vertically;
+    animation-name: icon-wobble-vertically;
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  
+  @keyframes icon-wobble-vertically {
+    16.65% {
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
+    }
+    33.3% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+    49.95% {
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);
+    }
+    66.6% {
+      -webkit-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+    83.25% {
+      -webkit-transform: translateY(1px);
+      transform: translateY(1px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  
+  /**** ICON SHRINK AND POP ***/
+  .icon-shrink-pop{
+    background: yellow;
+    transform: translateZ(0px);
+    position: relative;
+    padding-right: 2.2em;
+  }
+  
+  .icon-shrink-pop:before {
+    font-family: FontAwesome;
+    content: "\f056";
+    position: absolute;
+    right: .8em;
+    padding: 2px 1px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);   
+  }
+  
+  .icon-shrink-pop:hover:before {
+    -webkit-animation-name: icon-shrink-pop;
+    -webkit-transition-property: transform;
+    -webkit-animation-duration: 0.75s;
+    -webkit-animation-timing-function: linear;
+    
+    animation-name: icon-shrink-pop;
+    transition-property: transform;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;  
+  }
+  
+  @keyframes icon-shrink-pop {
+    0% {
+      transform: scale(1.0);
+    }
+    100% {
+      transform: scale(0.2);
+    }
+  }

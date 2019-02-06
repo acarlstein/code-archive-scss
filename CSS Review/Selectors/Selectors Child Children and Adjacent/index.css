@@ -1,0 +1,24 @@
+
+/* Adjacent selector (+): Target an adjacent sibling of an element */
+h1 + p { 
+    font-weight: bold;
+  }
+  
+  /* Greater-than selector (>): Speficy child or children  immediately nested in the parent*/
+  #explosions > li {
+    color: red;
+  }
+  
+  #games li {
+    color: blue;
+  }
+  
+  /* Notices how the bullets still in blue while the text is in green */
+  #games > li > p {
+    color: green;
+  }
+  
+  /* General sibling selector (~): [CSS3] match an element following another regardless of its immediacy. Also, style all paragraphs after the top-level heading */
+  h2 ~ p {
+    color: blue;
+  }

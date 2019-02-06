@@ -1,0 +1,30 @@
+/* 
+First value: Horizontal offset. How far the shadow is to the right (or left if negative).
+Second value: Vertical offset. How far the shadow is downward (or upwards if negative).
+Third value (optional): blur radius. Higher value = less sharp the shadow. Omitting is done with 0.
+Fourth value (optional): Spread distance. Higher value = larger the shadow. Inheriting the size is done with 0. 
+Fifth Value (optional): color.
+*/
+#box-shadow{
+    box-shadow: 5px 5px 3px 1px #999;
+    border: #CCC solid 1px;
+    width: 50px;
+  }
+  
+  
+  #box-inner {
+    box-shadow: inset 0 0 7px 5px #ddd;
+    border: #CCC solid 1px;
+    width: 50px;
+    margin-top: 10px;
+  }
+  
+  /*
+  First value: Horizontal offset.
+  Second value: Vertical offset.
+  Third value (optional): Blur radius.
+  Fourth value (optional): Color.
+  */
+  #box-text-shadow {
+    text-shadow: -2px 2px 2px #999;
+  }

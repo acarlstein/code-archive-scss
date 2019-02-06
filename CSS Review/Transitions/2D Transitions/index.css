@@ -1,0 +1,372 @@
+.box {
+    background: lightgray;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    margin: 5px 3px 5px 3px;
+  }
+  
+  /* You need to indicate that it is a block to be affected by the transform */
+  .box {
+    display: inline-block;
+  }
+  
+  /**** SHRINK ***/
+  .shrink{
+    background: orange;
+    transform: translateZ(0px);
+    transition-duration: .3s;
+    transition-property: transform;  
+  }
+  
+  .shrink:hover { 
+    transform: scale(0.8);
+  }
+  
+  /*** GROW ***/
+  .grow {
+    background: yellow;
+    transform: translateZ(0px);
+    transition-duration: .3s;
+    transition-property: transform;
+  }
+  
+  .grow:hover {
+    transform: scale(1.2);
+  }
+  
+  /*** BOUNCE IN ***/
+  .bounce-in {
+    background: green;
+    color: white;
+    transform: translateZ(0);
+    transition-duration: 0.5s;
+  }
+  
+  .bounce-in:hover{
+    transform: scale(1.2);
+    transition-timing-function: cubic-bezier(0.48, 2.01, 0.32, -0.38);
+  }
+  
+  /*** BOUNCE OUT ***/
+  .bounce-out {
+    background: purple;
+    color: white;
+    transform: translateZ(0);
+    transition-duration: 0.5s;
+  }
+  
+  .bounce-out:hover{
+    transform: scale(0.8);
+    transition-timing-function: cubic-bezier(0.48, 2.01, 0.32, -0.38);
+  }
+  
+  /*** PULSING ***/
+  a.pulsing{
+    background: yellow; 
+  }
+  
+  /* We add -webkit- in front for Chrome, Safari, Opera */
+  a.pulsing:hover {
+      position: relative;
+      -webkit-animation: myfirst 0.3s linear .2s infinite alternate; 
+      animation: myfirst 0.3s linear .2s infinite alternate;
+  }
+  
+  /* @keyframes rule specifies the animation code. 
+  
+  The animation will gradually changing from 
+  one set of CSS styles to another. 
+  
+  During the animation, you can change the set of CSS styles many times. */
+  
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes myfirst {
+    100% {
+      background-color: yellow; 
+      transform: scale(1.0);
+    }
+    0% {
+      background-color: red; 
+      transform: scale(0.8);
+    }
+  }
+  
+  /* Standard syntax */
+  @keyframes myfirst {
+    100% {
+      background-color: yellow; 
+      transform: scale(1.0);
+    }
+    0%   {
+      background-color: red; 
+      transform: scale(0.8);
+    }
+  }
+  
+  /*** ROTATE ***/
+  .rotate {
+    background: blue;
+    color: white;
+    
+    -webkit-transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transform: translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  
+  .rotate:hover
+  , .rotate:active
+  , .rotate:focus{
+    background: gray;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+    
+  /*** FLOAT ***/
+  .float-y {
+    -webkit-transform: translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    -webkit-transition-timing-function: ease-out;
+    transform: translateZ(0);
+    transition-duration: 0.3s;
+    transition-property: transform;
+    transition-timing-function: ease-out;
+  }
+  
+  .float-y:hover
+  , .float-y:focus
+  , .float-y:active {
+      -webkit-transform: translateY(-9px);
+      transform: translateY(-9px);
+  }
+  
+  /*** BOBBING ***/
+  a.bob-y {
+    background: brown;
+    color: white;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);     
+  }
+  
+  a.bob-y:hover
+  , a.bob-y:focus
+  , a.bob-y:active {
+    background: green;
+    
+    -webkit-animation-name: bob-y-float, bob-y;
+    -webkit-animation-duration: .3s, 1.5s;
+    -webkit-animation-delay: 0s, .3s;
+    -webkit-animation-timing-function: ease-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, infinite;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-direction: normal, alternate;
+  
+    animation-name: bob-y-float, bob-y;
+    animation-duration: .3s, 1.5s;
+    animation-delay: 0s, .3s;
+    animation-timing-function: ease-out, ease-in-out;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal, alternate;
+  }
+  
+  @keyframes bob-y-float {
+    100% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    } 
+  }
+  
+  @keyframes bob-y {
+    0% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+    50% {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+    100% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+  }
+  
+  /*** WOBBLE VERTICALLY ***/
+  .wobble-y {
+    background: orange;
+    transform: translateZ(0);
+  }
+  
+  .wobble-y:hover {
+    -webkit-animation-name: wobble-vertical;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-name: wobble-vertical;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes wobble-vertical {
+    16.65% {
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px);
+    }
+    33.3% {
+      -webkit-transform: translateY(-8px);
+      transform: translateY(-8px);
+    }
+    49.95% {
+      -webkit-transform: translateY(4px);
+      transform: translateY(4px);
+    }
+    66.6% {
+      -webkit-transform: translateY(-2px);
+      transform: translateY(-2px);
+    }
+    83.25% {
+      -webkit-transform: translateY(1px);
+      transform: translateY(1px);
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  
+  /*** WOBBLE HORIZONTALLY ***/
+  .wobble-x {
+    background: purple;  
+    color: white;
+    transform: translateZ(0);
+  }
+  
+  .wobble-x:hover {
+    -webkit-animation-name: wobble-horizontal;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: 1;
+    animation-name: wobble-horizontal;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes wobble-horizontal {
+    16.65% {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
+    }
+    33.3% {
+      -webkit-transform: translateX(-8px);
+      transform: translateX(-8px);
+    }
+    49.95% {
+      -webkit-transform: translateX(4px);
+      transform: translateX(4px);
+    }
+    66.6% {
+      -webkit-transform: translateX(-2px);
+      transform: translateX(-2px);
+    }
+    83.25% {
+      -webkit-transform: translateX(1px);
+      transform: translateX(1px);
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+  }
+  
+  /*** WOBBLE DIAGONALLY ***/
+  .wobble-xy{
+    background: green;
+    color: white;
+  }
+  
+  .wobble-xy:hover{
+    background: orange;
+  
+    -webkit-animation: wobble-top-right 2s, wobble-bottom-right 2s;
+    /*-webkit-animation-name: wobble-bottom-right, wobble-top-right;*/
+    -webkit-animation-duration: 1s, 1s;
+    -webkit-animation-timing-function: ease-in-out, ease-in-out;
+    -webkit-animation-iteration-count: 1, 1;
+    
+    animation: wobble-top-right 2s, wobble-bottom-right 2s;
+    /*animation-name: wobble-bottom-right, wobble-top-right;*/
+    animation-duration: ease-in-out, ease-in-out;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-iteration-count: 1, 1;
+  }
+  
+  @keyframes wobble-bottom-right{
+    0% {
+      -webkit-transform: translate(10px, 10px);
+      transform: translate(10px, 10px);    
+    }
+    16.65% {
+      -webkit-transform: translate(8px, 8px);
+      transform: translate(8px, 8px);
+    }
+  
+    33.3% {
+      -webkit-transform: translate(-6px, -6px);
+      transform: translate(-6px, -6px);
+    }
+    49.95% {
+      -webkit-transform: translate(4px, 4px);
+      transform: translate(4px, 4px);
+    }
+    66.6% {
+      -webkit-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+    }
+    83.25% {
+      -webkit-transform: translate(1px, 1px);
+      transform: translate(1px, 1px);
+    }
+    100% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+  }
+  
+  @keyframe wobble-top-right {
+    0%{
+      -webkit-transform: translate(10px, -10px);
+      transform: translate(8px, -8px);    
+    }
+    16.65% {
+      -webkit-transform: translate(8px, -8px);
+      transform: translate(8px, -8px);
+    }
+    33.3% {
+      -webkit-transform: translate(-6px, 6px);
+      transform: translate(-6px, 6px);
+    }
+    49.95% {
+      -webkit-transform: translate(4px, -4px);
+      transform: translate(4px, -4px);
+    }
+    66.6% {
+      -webkit-transform: translate(-2px, 2px);
+      transform: translate(-2px, 2px);
+    }
+    83.25% {
+      -webkit-transform: translate(1px, -1px);
+      transform: translate(1px, -1px);
+    }
+    100% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+  }
+  
+  

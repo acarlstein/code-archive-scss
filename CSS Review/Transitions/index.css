@@ -1,0 +1,33 @@
+a.example1:link {
+    color: hsl(40,50%,50%);
+}
+
+a.example1:hover {
+    color: hsl(120,100%,50%);
+}
+
+/*
+transition-delay:	Delay (in seconds) for the transition effect
+transition-duration:	Seconds or milliseconds a transition effect takes to complete
+transition-property:	CSS property the transition effect is for
+transition-timing-function: Speed curve of the transition effect
+  - ease: Gradual acceleration at the start of the transition and a gradual deceleration at the end.
+  - linear: Maintains a constant speed throughout
+Note: transition alone is a shorthand property for the previous four transition properties into a single one.
+Note: CSS transitions won’t work in Internet Explorer versions 9 and below.
+*/
+div.example2{
+    border: 1px solid #000;   
+    background: hsl(36,50%,50%);
+    width: 150px;
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: .4s;  
+}
+
+div.example2:hover {
+  background: hsl(36,100%,50%);
+  width: 100%;
+}
+

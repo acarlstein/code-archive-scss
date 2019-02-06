@@ -1,0 +1,22 @@
+/* Navigation have nothing to do with the flow of the rest of the page */
+#navigation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+}
+
+#navigation2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+}
+
+/* Note: Since absolutely positioned boxes live in "their own wolrd", there is no accurate way to determine when they end */
+
+/* The content is moved to the right by 200px to give room to the navigation */
+#content {
+    margin-left: 200px;
+    margin-right: 200px;
+}

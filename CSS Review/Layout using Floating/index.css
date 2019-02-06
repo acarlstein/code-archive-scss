@@ -1,0 +1,27 @@
+/* Floating a box will shift it to the right or left of a line, with surrounding content flowing around it.*/
+
+#navigation {
+    float: left;
+}
+
+#navigation2 {
+   float: right;
+}
+
+/* Note:  if you do not want the next box to wrap around the floating objects, you can apply the clear property:
+- clear: left will clear left floated boxes
+- clear: right will clear right floated boxes
+- clear: both will clear both left and right floated boxes.
+*/
+
+/* The content is moved to the right and left by 200px to give room to the navigation and navigation2 */
+#content {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#footer {       
+    clear: both;
+    text-align: center;
+    background-color: red;
+}

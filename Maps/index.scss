@@ -1,0 +1,118 @@
+/* 
+Good tutorial for SCSS lists: 
+http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ 
+*/
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  
+  .box { 
+    @include border-radius(10px); 
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /*** MAP ***/
+  $color-map: (
+    red: #FF0000,
+    blue: #00FF00,
+    green: #0000FF,
+    'Color A': white,
+    black: #000000
+  );
+  
+  @debug $color-map;
+  
+  // Replace value by merging maps
+  $new: ('Color A' : gray);
+  $color-map: map-merge($color-map, $new);
+  
+  @debug $color-map;
+  
+  /* Let's create a useful method */
+  @function map-set($old-map, $new-key, $new-value) {
+    $new-map: ($new-key : $new-value);
+    @return map-merge($old-map, $new-map);
+  }
+  
+  /* Changing existing key-value */
+  $color-map: map-set($color-map, 'Color A', 'purple');
+  
+  /* Adding new key-value */
+  $color-map: map-set($color-map, 'Color B', 'gray');
+  
+  @debug $color-map;
+  
+  $index: 0;
+  @each $name, $hex in $color-map { 
+    #box-#{$index}{
+      color: $hex;
+      // & creates #box-x:before where x is the index value
+      &:before {  
+        content: '(';
+      }
+      &:after {
+        content: ') #{$name}: #{$hex}';
+      } 
+    }
+    $index: $index + 1;  
+  }
+  
+  
+  
+  
+  
+  
+  /*** EXPERIMENT: Create CSS in Function and added to SASS function ***/
+  
+  @function map-colors-to-boxes($color-map){
+    $str: '';
+    $index: 0;
+    @each $name, $hex in $color-map { 
+      $str: $str 
+          + " #box-#{$index}:after {"
+          + "  content: ' #{$name}'; "
+          + "  color: #{$hex};"
+          + " }";
+  
+      $index: $index + 1;
+    }
+    @return $str;
+  }
+  
+  
+  
+  @if map-has-key($color-map, white){
+    $new: (white: #CCCCCC);
+    $color-map: map-merge($color_map, $new);
+  }
+  
+  $output: map-colors-to-boxes($color-map); 
+  
+  //@debug $output;
+  //@call(map-colors-to-boxes, $color-map);
+  //@inspect($output);
+  //@logger($output);
+  //@compile($output);
+  //@call ($output);
+  //@EvaluationContext($output);
+  //@evaluationcontext($output);
+  
+  /*
+  @mixin apply {
+    * html {
+      @content;
+    }
+  }
+  
+  * html {
+     html: $output;
+  }
+  */
+  
+  

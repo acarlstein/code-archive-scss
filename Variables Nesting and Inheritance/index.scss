@@ -1,0 +1,77 @@
+$base-font-type: Helvetica;
+$base-font-color: darkgray;
+
+body {
+  font: $base-font-type;
+  color: $base-font-color;
+}
+
+/*** PURE CSS ***/
+div.example-1{
+  color:red
+}
+
+div.example-1 p {
+    color: blue;
+}
+
+/*** SAME RESULTS WITH SCSS ***/
+div.example-2{
+  color: red;
+  p {
+    color: blue;
+  }
+}
+
+/*** SCSS EXTEND (INHERITANCE) ***/
+$message-color: black;
+$message-color-sucess: green;
+$message-color-warning: orange;
+$message-color-error: red;
+
+.message {
+  border: 1px solid $message-color;
+  padding: 10px;
+  color: $message-color;
+}
+
+.success {
+  @extend .message;
+  color: $message-color-sucess;
+  border-color: $message-color-sucess;
+}
+
+.warning {
+  @extend .message;
+  color: $message-color-warning;
+  border-color: $message-color-warning;
+}
+
+.error {
+  @extend .message;
+  color: $message-color-error;
+  border-color: $message-color-error;
+}
+
+/*
+This is the equivalent of this:
+
+.message, .success, .error, .warning {
+  border: 1px solid black;
+  padding: 10px;
+  color: black;
+}
+
+.success {
+  border-color: green;
+}
+
+.warning {
+  border-color: orange;
+}
+
+.error {
+  border-color: red;
+}
+
+*/

@@ -1,0 +1,115 @@
+/* As a tutorial, I am braking things done in different sections; however, you can combine all sections into one while they have the same selectors. */
+
+/* Align on development message vertically with the text */
+#onDevelopment{
+    vertical-align: middle;
+  }
+  
+  body {
+    background: lightgray;
+  }
+  
+  /* Remove bullets */
+  nav ul {
+    list-style: none;
+    border: 1px dotted red;
+  }
+  
+  /* Remove all indentation*/
+  nav ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 
+  Position relative to its normal position. 
+  Left float indicates that the rest should wrap around it to its right
+  Note: Test by removing float and see how the dotted area changes.
+  */
+  nav ul {
+    position: relative;
+    float: left;
+  }
+  
+  /* 
+  Set links font, decoration, and color 
+  */
+  nav ul a {
+    font-family: Helvetica, Arial;
+    text-decoration: none;
+    color: black;
+    line-height: 32px;
+  }
+  
+  /* Shape links in blocks */
+  nav ul a {
+    display: block;
+    padding: 0 15px;
+    border: 1px dotted blue;
+  }
+  
+  /*
+  On block level elements, the line-height property specifies the minimum height of line boxes within the element.
+  */
+  nav ul a {
+    line-height: 32px;
+  }
+  
+  /* Add background color to blocks */
+  nav ul li {
+    background: orange;
+  }
+  
+  /* Change background color when hover over */
+  nav ul li:hover {
+    background: yellow;
+  }
+  
+  /* 
+  As before, we are removing indentation and position relatively.
+  We can obtain a similar effect using "display: inline-block;", tried it.
+  */
+  nav ul li {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    float: left;
+  }
+  
+  /*
+  nav ul li {
+    display: inline-block;
+  }
+  */
+  
+  /*
+  Position each block relative to the nearest positioned ancestors.
+  */
+  nav ul ul {
+    position: absolute;
+  }
+  
+  /*
+  Indicate that we don't wish the elements to float.
+  If a block is not floated it will make up for the missing width.
+  We are going to define just in case a default width.
+  */
+  nav ul ul li {
+    float: none;
+    width: 80px;
+  }
+  
+  /* Position the text to the center to make it attractive */
+  nav ul ul li {
+    text-align: center;
+  }
+  
+  /* Hide sub menu */
+  nav ul li ul {
+    display: none;
+  }
+  
+  /* Show submenu when main menu is hover */
+  nav ul li:hover > ul {
+    display: block;
+  }

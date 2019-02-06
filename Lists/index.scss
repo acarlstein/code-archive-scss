@@ -1,0 +1,118 @@
+/* 
+Good tutorial for SCSS lists: 
+http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ 
+*/
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+  }
+  
+  .box { 
+    @include border-radius(10px); 
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /*** LIST ***/
+  
+  /* Parentesis are optional */
+  $color-list-using-spaces: (red blue green yellow);
+  $color-list-using-commas: black, white, yellow, green;
+  
+  $list-using-spaces-length: length($color-list-using-spaces) - 1;
+  $list-using-commas-length: length($color-list-using-spaces) - 1;
+  
+  $for-loop-limit: max($list-using-spaces-length, $list-using-commas-length);
+  @for $i from 0 through $for-loop-limit {
+    
+    /* List indexing start at 1 instead of 0 */
+    $list-index: $i + 1;
+    
+    #box-#{$i} {
+      background: nth($color-list-using-spaces, $list-index);
+      color: nth($color-list-using-commas, $list-index);
+      font-weight: bolder;
+    }
+  
+    #box-#{$i}:before {
+      content: ' [Background:' + nth($color-list-using-spaces, $list-index) + '] ';
+    }
+  
+    
+    #box-#{$i}:after {
+      content: ' [Font color:' + nth($color-list-using-commas, $list-index) + ']';
+    }
+    
+  }
+  
+  /*** NESTED LIST ***/
+  $nested-list: (
+    (fontcolors, red, blue, green, yellow),
+    (fontsizes, 10px, 14px, 16px, 20px)
+  );
+  
+  /* Sub Lists 1 */
+  /* \A plus white-space allow you to do new lines with content in CSS */
+  $str1: '\A';
+  @each $label, $elem1, $elem2, $elem3, $elem4 in $nested-list {
+    $str1: $str1 
+          + ' [' + $label  
+          + ': ' + $elem1  
+          + ' ' + $elem2    
+          + ' ' + $elem3  
+          + ' ' + $elem4
+          + '] \A';
+  }  
+  
+  #each-list-1:after {
+    content:  $str1;
+    white-space: pre;
+  }
+  
+  /* Sub Lists 2 */
+  $str2: '\A';
+  @each $sub-list in $nested-list {
+    $str2: $str2 
+          + ' [' + nth($sub-list, 1)    // Label
+          + ': ' + nth($sub-list, 2)  // 1st value
+          + ' ' + nth($sub-list, 3)  // 2st value   
+          + ' ' + nth($sub-list, 4)  // 3st value  
+          + ' ' + nth($sub-list, 5)
+          + '] \A'; // 4st value
+  }
+  
+  #each-list-2:after {
+    content: ' ' + $str2; 
+    white-space: pre;
+  }
+  
+  /* Sub Lists 3 */
+  $str3: '\A';
+  @each $sub-list in $nested-list {
+    $str3: $str3 + ' [';
+    @each $item in $sub-list {
+      // Add colon for label which is 1st item
+      @if index($sub-list, $item) == 1 { 
+        $str3: $str3 + $item + ': '
+      }
+      @else{
+            $str3: $str3 + ' ' + $item;
+      }
+    } 
+    $str3: $str3 + '] \A'; 
+  }
+  
+  /* \A plus white-space allow you to do new lines with content in CSS */
+  #each-list-3:after {
+    content: ' ' + $str3; 
+    white-space:pre;
+  }
+  
+  
+  
+  
+  

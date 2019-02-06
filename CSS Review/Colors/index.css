@@ -1,0 +1,28 @@
+/*  RGB colors: red (0-255), green(0-255), blue(0-255), alpha (0.0 - 0.1) */
+h1 {    
+    color: rgba(255,0,0,0.8);
+}
+
+/* Hue, Saturation and Lightness: Direct control over the aspects of a color's shade. 
+- Hue color wheel (0-360): 0 is red, 120 is green, 240 is blue. 
+- Saturation (0%-100%): How saturated the color will be. 0% is none. 100% is whole.
+- Lightness: 50% normal. 0% black. 100% white.
+In this case, the RGB equivalent would be #f90, #ff9900,  and rgb(255, 153, 0).
+*/
+.subtitles{
+  color: hsl(36, 100%, 50%)
+}
+
+#second-subtitle{
+  color: #f90; 
+}
+
+#second-third {
+  color: rgb(255, 153, 0).
+}
+
+/* HSLa: HSL plus transparency. Not supported by older browsers. Support for IE9+. */
+.smaller-titles{ 
+  background: hsla(0, 75%, 75%, 0.5) 
+}
+
