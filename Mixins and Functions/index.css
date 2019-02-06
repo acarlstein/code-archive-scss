@@ -1,0 +1,49 @@
+.box, .numeric-value:after, .boolean-value:after, .random-color {
+    padding: 10px;
+    margin: 10px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  /*** MIXIN (EQUIVALENT TO FUNCTIONS) ***/
+  .box, .numeric-value:after, .boolean-value:after, .random-color {
+    border: 1px solid black;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+  }
+  
+  /*
+    Previous code will produce:
+    .box {
+      border: 1px solid black;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      border-radius: 10px;
+    }
+    */
+  /*** OPERATORS ***/
+  .numeric-value:after {
+    content: "Value: 1.1";
+  }
+  
+  .boolean-value:after {
+    content: "Value: true";
+  }
+  
+  /*** FUNCTIONS ***/
+  /* 
+    List of functions: http://sass-lang.com/documentation/Sass/Script/Functions.html 
+    */
+  /* lighten is a function that makes a color lighter */
+  /* Create List */
+  /*
+    nth is a function that returns a specific item in  a list
+    random is a function that returns a random number
+    */
+  .random-color {
+    background: #3ea5ce;
+  }
+  

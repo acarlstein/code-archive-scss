@@ -1,0 +1,98 @@
+/* 
+Good tutorial for SCSS lists: 
+http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ 
+*/
+.box {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /*** LIST ***/
+  /* Parentesis are optional */
+  /* List indexing start at 1 instead of 0 */
+  #box-0 {
+    background: red;
+    color: black;
+    font-weight: bolder;
+  }
+  
+  #box-0:before {
+    content: " [Background:red] ";
+  }
+  
+  #box-0:after {
+    content: " [Font color:black]";
+  }
+  
+  /* List indexing start at 1 instead of 0 */
+  #box-1 {
+    background: blue;
+    color: white;
+    font-weight: bolder;
+  }
+  
+  #box-1:before {
+    content: " [Background:blue] ";
+  }
+  
+  #box-1:after {
+    content: " [Font color:white]";
+  }
+  
+  /* List indexing start at 1 instead of 0 */
+  #box-2 {
+    background: green;
+    color: yellow;
+    font-weight: bolder;
+  }
+  
+  #box-2:before {
+    content: " [Background:green] ";
+  }
+  
+  #box-2:after {
+    content: " [Font color:yellow]";
+  }
+  
+  /* List indexing start at 1 instead of 0 */
+  #box-3 {
+    background: yellow;
+    color: green;
+    font-weight: bolder;
+  }
+  
+  #box-3:before {
+    content: " [Background:yellow] ";
+  }
+  
+  #box-3:after {
+    content: " [Font color:green]";
+  }
+  
+  /*** NESTED LIST ***/
+  /* Sub Lists 1 */
+  /* \A plus white-space allow you to do new lines with content in CSS */
+  #each-list-1:after {
+    content: "\a [fontcolors: red blue green yellow] \a [fontsizes: 10px 14px 16px 20px] \a";
+    white-space: pre;
+  }
+  
+  /* Sub Lists 2 */
+  #each-list-2:after {
+    content: " \a [fontcolors: red blue green yellow] \a [fontsizes: 10px 14px 16px 20px] \a";
+    white-space: pre;
+  }
+  
+  /* Sub Lists 3 */
+  /* \A plus white-space allow you to do new lines with content in CSS */
+  #each-list-3:after {
+    content: " \a [fontcolors:  red blue green yellow] \a [fontsizes:  10px 14px 16px 20px] \a";
+    white-space: pre;
+  }
+  

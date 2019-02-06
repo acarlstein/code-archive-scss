@@ -1,0 +1,24 @@
+p {
+    color: red;
+  }
+  
+  p + p {
+    color: blue;
+  }
+  
+  h1, h2, h3 {
+    color: red;
+  }
+  
+  h1 {
+    color: blue;
+  }
+  
+  h1 + h2 {
+    color: green;
+  }
+  
+  h1 ~ h3 {
+    border: 1px solid black;
+  }
+  

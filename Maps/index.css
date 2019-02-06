@@ -1,0 +1,104 @@
+/* 
+Good tutorial for SCSS lists: 
+http://hugogiraudel.com/2013/07/15/understanding-sass-lists/ 
+*/
+.box {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  /*** MAP ***/
+  /* Let's create a useful method */
+  /* Changing existing key-value */
+  /* Adding new key-value */
+  #box-0 {
+    color: #FF0000;
+  }
+  
+  #box-0:before {
+    content: '(';
+  }
+  
+  #box-0:after {
+    content: ") red: #FF0000";
+  }
+  
+  #box-1 {
+    color: #00FF00;
+  }
+  
+  #box-1:before {
+    content: '(';
+  }
+  
+  #box-1:after {
+    content: ") blue: #00FF00";
+  }
+  
+  #box-2 {
+    color: #0000FF;
+  }
+  
+  #box-2:before {
+    content: '(';
+  }
+  
+  #box-2:after {
+    content: ") green: #0000FF";
+  }
+  
+  #box-3 {
+    color: "purple";
+  }
+  
+  #box-3:before {
+    content: '(';
+  }
+  
+  #box-3:after {
+    content: ") Color A: purple";
+  }
+  
+  #box-4 {
+    color: #000000;
+  }
+  
+  #box-4:before {
+    content: '(';
+  }
+  
+  #box-4:after {
+    content: ") black: #000000";
+  }
+  
+  #box-5 {
+    color: "gray";
+  }
+  
+  #box-5:before {
+    content: '(';
+  }
+  
+  #box-5:after {
+    content: ") Color B: gray";
+  }
+  
+  /*** EXPERIMENT: Create CSS in Function and added to SASS function ***/
+  /*
+    @mixin apply {
+      * html {
+        @content;
+      }
+    }
+    
+    * html {
+       html: $output;
+    }
+    */
+  

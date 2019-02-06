@@ -1,0 +1,68 @@
+body {
+    font: Helvetica;
+    color: darkgray;
+  }
+  
+  /*** PURE CSS ***/
+  div.example-1 {
+    color: red;
+  }
+  
+  div.example-1 p {
+    color: blue;
+  }
+  
+  /*** SAME RESULTS WITH SCSS ***/
+  div.example-2 {
+    color: red;
+  }
+  
+  div.example-2 p {
+    color: blue;
+  }
+  
+  /*** SCSS EXTEND (INHERITANCE) ***/
+  .message, .success, .warning, .error {
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+  }
+  
+  .success {
+    color: green;
+    border-color: green;
+  }
+  
+  .warning {
+    color: orange;
+    border-color: orange;
+  }
+  
+  .error {
+    color: red;
+    border-color: red;
+  }
+  
+  /*
+  This is the equivalent of this:
+  
+  .message, .success, .error, .warning {
+    border: 1px solid black;
+    padding: 10px;
+    color: black;
+  }
+  
+  .success {
+    border-color: green;
+  }
+  
+  .warning {
+    border-color: orange;
+  }
+  
+  .error {
+    border-color: red;
+  }
+  
+  */
+  

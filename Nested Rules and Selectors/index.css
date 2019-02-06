@@ -1,0 +1,81 @@
+.parent {
+    color: red;
+    border: 2px solid red;
+  }
+  
+  .parent .child {
+    color: blue;
+    border: 2px solid blue;
+  }
+  
+  .child {
+    color: orange;
+    border: 2px solid orange;
+  }
+  
+  .child:hover {
+    color: green;
+    border: 2px solid green;
+  }
+  
+  /*
+    .parent {
+      color: red;
+      border: 2px solid red;
+    }
+    
+    .parent .child {
+      color: blue;
+      border: 2px solid blue;
+    }
+    
+    .child { // Orphaned child
+      color: orange;
+      border: 2px solid orange;
+    }
+    
+    .child:hover {
+      color: green;
+      border: 2px solid green;
+    }
+    */
+  /****************
+     *** SIBLINGS ***
+     ****************/
+  p {
+    color: red;
+  }
+  
+  p + p {
+    color: blue;
+  }
+  
+  /*
+    p {
+      color: red;
+    }
+    p + p {
+      color: blue;
+    }
+    */
+  h1, h2, h3 {
+    color: red;
+  }
+  
+  h1 {
+    color: blue;
+  }
+  
+  h1 + h2 {
+    color: green;
+  }
+  
+  /*
+    h1 {
+      color: blue;
+    }
+    h1 + h2 {
+      color: green;
+    }
+    */
+  

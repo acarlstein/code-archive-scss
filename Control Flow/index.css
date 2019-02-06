@@ -1,0 +1,60 @@
+.box, .numeric-value:after, #box-1, #box-2, #box-3 {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    width: 100px;
+    text-align: center;
+  }
+  
+  /*** IF STATEMENT ***/
+  .numeric-value:after {
+    content: "Value: 1.1";
+  }
+  
+  .boolean-value:after {
+    content: "Value: true";
+  }
+  
+  /*** FOR LOOP ***/
+  /*** EACH ***/
+  #box-0 {
+    background: red;
+  }
+  
+  #box-1 {
+    background: blue;
+  }
+  
+  #box-2 {
+    background: green;
+  }
+  
+  #box-3 {
+    background: yellow;
+  }
+  
+  /*** WHILE ***/
+  #box-3 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  #box-2 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  #box-1 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  #box-0 {
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
